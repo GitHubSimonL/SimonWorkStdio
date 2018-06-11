@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cap name="CProto" version="1.0">
+	<Commands name="Command" prefix="CODE_" startvalue="1" desc="命令字部分">
+		<command name="Common_Respon"		payload="Common_Respon"			desc="用于简单的确认回复或者返回错误码"/>	
+		<command name="First_http_req"			payload="First_http_req"			desc="first http request"/>
+		<command name="First_http_respon"		payload="First_http_req"			desc="first http respon"/>
+		<command name="First_tcp_req"			payload="First_tcp_req"				desc="first tcp respon"/>
+		<command name="First_tcp_respon"		payload="First_tcp_respon"			desc="first tcp respon"/>
+	</Commands>
+
+	<body name="Common_Respon"	prefix="F_"	postfix="">
+		<item name="Status_code"		type="integer"		desc="" />
+		<item name="Message"		type="string"		desc="" />
+		<item name="SystemTime"		type="integer"		desc="" />
+	</body>
+
+	<body name="Map_field_entry" prefix="F_" postfix="">
+		<item name="Key"		type="string"		desc="" />
+		<item name="Value"		type="string"		desc="" />
+	</body>
+
+	<body name="First_http_req"	prefix="F_"	postfix="">
+		<item name="Udid"		type="string"		desc="" />
+		<item name="ExtraInfo"		pretype="repeated"		type="Map_field_entry"		desc="" />
+	</body>
+	<body name="First_http_respon"	prefix="F_"	postfix="">
+		<item name="Common"				type="Common_Respon"		desc="" />
+	</body>
+
+	<body name="First_tcp_req"	prefix="F_"	postfix="">
+		<item name="Udid"		type="string"		desc="" />
+		<item name="ExtraInfo"		pretype="repeated"		type="Map_field_entry"		desc="" />
+	</body>
+	<body name="First_tcp_respon"	prefix="F_"	postfix="">
+		<item name="Common"				type="Common_Respon"		desc="" />
+	</body>
+
+
+</cap>
